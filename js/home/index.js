@@ -1,3 +1,3 @@
-define(['jquery','common','header','nprogress'], function($,undefined,undefined,nprogress) {
+define(['jquery','common','header','aside','nprogress','loading'], function($,undefined,undefined,undefined,nprogress,loading) {
 	nprogress.done();
 });

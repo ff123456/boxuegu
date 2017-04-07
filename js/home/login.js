@@ -1,4 +1,4 @@
-define(['jquery', 'jqueryCookie', 'nprogress'], function ($, undefined, nprogress) {
+define(['jquery', 'jqueryCookie', 'nprogress', 'loading'], function ($, undefined, nprogress,undefined) {
 
   (function () {
     if ($.cookie('PHPSESSID')) {
@@ -20,6 +20,10 @@ define(['jquery', 'jqueryCookie', 'nprogress'], function ($, undefined, nprogres
         // 发送成功跳转到页面
         success: function (data) {
           if (data.code == 200) {
+
+            $.cookie('userInfo',JSON.stringify(data.result),{
+              path:'/'
+            });
             location.href = '/';
           }
         },
